@@ -1,0 +1,105 @@
+#een {
+    transform: rotate(180deg);
+    text-align: right;
+}
+
+#een:hover {
+    transform: rotate(0deg);
+    text-align: left;
+}
+
+#twee {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: left;
+}
+
+#twee:hover {
+    direction: rtl;
+    unicode-bidi: normal;
+    text-align: left;
+}
+
+#drie {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    transform: rotate(180deg);
+    text-align: right;
+}
+
+#drie:hover {
+    transform: rotate(0deg);
+    direction: rtl;
+    unicode-bidi: normal;
+    text-align: left;
+}
+
+::selection {
+    background-color: none;
+}
+
+#vier {
+    background-color: yellow;
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+
+}
+
+#vier::-webkit-scrollbar {
+    display: none;
+}
+
+#vijf {
+    padding-top: 500px;
+}
+
+#zes {
+    background-color: black;
+    height: 150px;
+    width: 100vw;
+}
+
+#zes p {
+    color: black;
+    margin: 0px;
+    display: inline-block;
+    padding: 10px;
+}
+
+#zes p:hover {
+    color: white;
+}
+
+#zes p#zeven1 {
+    margin-left: 80%;
+}
+
+#zes p#zeven2 {
+    margin-left: 25%;
+}
+
+#zes p#zeven3 {
+    margin-left: 130%;
+}
+
+#zes p#zeven4 {
+    margin-left: 18%;
+}
+
+#acht {
+    background-color: gray;
+    width: 150px;
+}
+
+#acht p#negen1 {
+    display: none;
+}
+
+#acht:hover p#negen1 {
+    display: block;
+}
+
+#acht:hover p#negen {
+    display: none;
+}
