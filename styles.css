@@ -1,20 +1,41 @@
 :root {
+    --big-margin: 80px;
+    --normal-margin: 30px;
+    --small-margin: 10px;
     font-family: Helvetica, Arial, sans-serif;
+    cursor: var(--normal-cursor);
     --primary-color: #ffffff;
     --secondary-color: #000000;
-    cursor: url(./media/cursor_dark.png), auto;
+    --normal-cursor: url(./media/cursor_dark.png), auto;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: #000000;
         --secondary-color: #ffffff;
-        cursor: url(./media/cursor_light.png), auto;
+        --normal-cursor: url(./media/cursor_light.png), auto;
     }
 }
 
 ::selection {
     background-color: none;
+}
+
+[clue="true"] {
+    cursor: help;
+}
+
+[person]::before {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+[person="Jones"]::before {
+    content: "Jones:";
+}
+
+[person="You"]::before {
+    content: "You:";
 }
 
 [encryption="flipped"] {
@@ -53,37 +74,33 @@ body {
     background-color: var(--primary-color);
 }
 
-body>article:first-of-type {
+article {
     width: 100vw;
     height: fit-content;
     background-color: var(--primary-color);
     position: relative;
+    margin-bottom: var(--big-margin);
 }
 
-body>article:first-of-type h1,
-body>article:first-of-type p:first-of-type,
-body>article:first-of-type p:last-of-type {
+article h1,
+article p {
     color: var(--secondary-color);
     max-width: 600px;
     width: 100vw;
     text-align: center;
-    margin: 15px auto;
+    margin: var(--small-margin) auto;
 }
 
-body>article:first-of-type p:first-of-type {
-    margin-bottom: 0px;
+article:first-of-type p:last-of-type {
+    margin: var(--normal-margin) auto;
 }
 
-body>article:first-of-type p:first-of-type span {
-    font-weight: 900;
-    font-size: 20px;
-}
-
-body>article:first-of-type p:last-of-type {
-    margin: 0px auto;
+article:first-of-type p:last-of-type span:not([person]) {
     color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-color: var(--secondary-color);
 }
 
-body>article:first-of-type p:last-of-type::selection {
+article:first-of-type p:last-of-type span:not([person])::selection {
     background-color: var(--secondary-color);
 }
