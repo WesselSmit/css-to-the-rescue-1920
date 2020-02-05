@@ -13,8 +13,46 @@
     }
 }
 
+/* 
+TODO
+- font groter maken
+- gebruik voortaan een ::after/::before ipv div om de huidige animatie soort te maken
+- schrijf een readme 
+*/
+
 ::selection {
     background-color: none;
+}
+
+[encryption="flipped"] {
+    transform: rotate(180deg);
+    text-align: left;
+}
+
+[encryption="flipped"]:active {
+    transform: rotate(0deg);
+    text-align: center;
+}
+
+[encryption="RTL"] {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: left;
+}
+
+[encryption="flippedRTL"] {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    transform: rotate(180deg);
+    text-align: right;
+}
+
+[encryption="RTL"]:active,
+[encryption="flippedRTL"]:active {
+    transform: rotate(0deg);
+    direction: rtl;
+    unicode-bidi: normal;
+    text-align: center;
 }
 
 body {
@@ -41,27 +79,4 @@ body>article:first-of-type p {
 body>article:first-of-type p span {
     font-weight: 900;
     font-size: 20px;
-}
-
-body>article:first-of-type div {
-    background-color: var(--primary-color);
-    width: 10%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    animation: backAndForth 5000ms linear infinite;
-}
-
-@keyframes backAndForth {
-    0% {
-        width: 0%;
-    }
-
-    50% {
-        width: 100%;
-    }
-
-    100% {
-        width: 0%;
-    }
 }
