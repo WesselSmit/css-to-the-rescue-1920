@@ -13,13 +13,6 @@
     }
 }
 
-/* 
-TODO
-- font groter maken
-- gebruik voortaan een ::after/::before ipv div om de huidige animatie soort te maken
-- schrijf een readme 
-*/
-
 ::selection {
     background-color: none;
 }
@@ -68,7 +61,8 @@ body>article:first-of-type {
 }
 
 body>article:first-of-type h1,
-body>article:first-of-type p {
+body>article:first-of-type p:first-of-type,
+body>article:first-of-type p:last-of-type {
     color: var(--secondary-color);
     max-width: 600px;
     width: 100vw;
@@ -76,7 +70,20 @@ body>article:first-of-type p {
     margin: 15px auto;
 }
 
-body>article:first-of-type p span {
+body>article:first-of-type p:first-of-type {
+    margin-bottom: 0px;
+}
+
+body>article:first-of-type p:first-of-type span {
     font-weight: 900;
     font-size: 20px;
+}
+
+body>article:first-of-type p:last-of-type {
+    margin: 0px auto;
+    color: var(--primary-color);
+}
+
+body>article:first-of-type p:last-of-type::selection {
+    background-color: var(--secondary-color);
 }
