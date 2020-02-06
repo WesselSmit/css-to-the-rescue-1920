@@ -25,27 +25,13 @@
     cursor: help;
 }
 
-[person]::before {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
-
-[person="Jones"]::before {
-    content: "Jones:";
-}
-
-[person="You"]::before {
-    content: "You:";
+[encryption]::after {
+    display: none;
 }
 
 [encryption="flipped"] {
     transform: rotate(180deg);
-    text-align: left;
-}
-
-[encryption="flipped"]:active {
-    transform: rotate(0deg);
-    text-align: center;
+    text-align: right;
 }
 
 [encryption="RTL"] {
@@ -61,12 +47,26 @@
     text-align: right;
 }
 
+[encryption="flipped"]:hover,
 [encryption="RTL"]:active,
 [encryption="flippedRTL"]:active {
     transform: rotate(0deg);
     direction: rtl;
     unicode-bidi: normal;
-    text-align: center;
+    text-align: left;
+}
+
+[person]::before {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+[person="Jones"]::before {
+    content: "Jones:";
+}
+
+[person="You"]::before {
+    content: "You:";
 }
 
 body {
@@ -85,10 +85,10 @@ article {
 article h1,
 article p {
     color: var(--secondary-color);
-    max-width: 600px;
     width: 100vw;
-    text-align: center;
+    text-align: left;
     margin: var(--small-margin) auto;
+    max-width: 600px;
 }
 
 article:first-of-type p:last-of-type {
@@ -103,4 +103,50 @@ article:first-of-type p:last-of-type span:not([person]) {
 
 article:first-of-type p:last-of-type span:not([person])::selection {
     background-color: var(--secondary-color);
+}
+
+
+
+
+
+
+section {
+    max-width: 600px;
+    margin: var(--small-margin) auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-bottom: 50px;
+}
+
+section>h1 {
+    width: 100%;
+    color: var(--secondary-color);
+    margin: 0px 0px var(--small-margin) 0px;
+}
+
+section>p {
+    width: 100%;
+    color: var(--secondary-color);
+    margin: 0px 0px var(--small-margin) 0px;
+}
+
+section article {
+    width: 100%;
+    max-width: 160px;
+    min-width: 140px;
+    height: 220px;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+section article div {
+    width: 100%;
+    height: 100%;
+    max-height: 150px;
+    background-color: var(--primary-color);
 }
