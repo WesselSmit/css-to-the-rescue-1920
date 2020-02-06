@@ -145,7 +145,7 @@ main>div:nth-of-type(2) {
 }
 
 main>div:nth-of-type(2) p {
-    padding: 25px 200px 0px 0px;
+    padding: 25px 180px 0px 0px;
     width: 200%;
     text-align: right;
     color: var(--secondary-color);
@@ -179,8 +179,8 @@ section>p {
 
 section article {
     width: calc(50% - 40px);
-    /* max-width: 160px; */
-    /* min-width: 120px; */
+    min-width: 140px;
+    max-width: 172px;
     height: 220px;
     padding: 10px;
     background-color: var(--secondary-color);
