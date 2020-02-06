@@ -178,9 +178,9 @@ section>p {
 }
 
 section article {
-    width: calc(100% - 20px);
-    max-width: 160px;
-    min-width: 140px;
+    width: calc(50% - 40px);
+    /* max-width: 160px; */
+    /* min-width: 120px; */
     height: 220px;
     padding: 10px;
     background-color: var(--secondary-color);
