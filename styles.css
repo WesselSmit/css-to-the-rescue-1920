@@ -7,6 +7,12 @@
     --primary-color: #ffffff;
     --secondary-color: #000000;
     --normal-cursor: url(./media/cursor_dark.png), auto;
+    --abnormal-cursor: url(./media/cursor_light.png), auto;
+    --cursor-anim1: url(./media/cursor_dark_anim1.png), auto;
+    --cursor-anim2: url(./media/cursor_dark_anim2.png), auto;
+    --cursor-anim3: url(./media/cursor_dark_anim3.png), auto;
+    --cursor-anim4: url(./media/cursor_dark_anim4.png), auto;
+    --cursor-anim5: url(./media/cursor_dark_anim5.png), auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +20,12 @@
         --primary-color: #000000;
         --secondary-color: #ffffff;
         --normal-cursor: url(./media/cursor_light.png), auto;
+        --abnormal-cursor: url(./media/cursor_dark.png), auto;
+        --cursor-anim1: url(./media/cursor_light_anim1.png), auto;
+        --cursor-anim2: url(./media/cursor_light_anim2.png), auto;
+        --cursor-anim3: url(./media/cursor_light_anim3.png), auto;
+        --cursor-anim4: url(./media/cursor_light_anim4.png), auto;
+        --cursor-anim5: url(./media/cursor_light_anim5.png), auto;
     }
 }
 
@@ -26,7 +38,30 @@
 }
 
 [clue="true"] {
-    cursor: help;
+    animation: exploreIndicator 1000ms infinite;
+
+}
+
+@keyframes exploreIndicator {
+    0% {
+        cursor: var(--cursor-anim1)
+    }
+
+    25% {
+        cursor: var(--cursor-anim2)
+    }
+
+    50% {
+        cursor: var(--cursor-anim3)
+    }
+
+    75% {
+        cursor: var(--cursor-anim4)
+    }
+
+    100% {
+        cursor: var(--cursor-anim5)
+    }
 }
 
 [encryption]::after {
@@ -124,8 +159,8 @@ main>div:first-of-type {
 }
 
 main>div:first-of-type p {
-    padding-top: 100px;
-    margin: 0px 0px 30px 0px;
+    padding: 100px 0px 30px 0px;
+    margin: 0px;
     width: 100%;
     text-align: center;
     color: var(--secondary-color);
@@ -133,6 +168,25 @@ main>div:first-of-type p {
 
 main>div:first-of-type p:active {
     text-align: center;
+}
+
+main>article:nth-of-type(2)>div p {
+    margin: 0px auto;
+    display: block;
+}
+
+main>article:nth-of-type(2)>div p:last-of-type {
+    display: none;
+}
+
+main>article:nth-of-type(2)>div:hover p:first-of-type,
+main>article:nth-of-type(2)>div:active p:first-of-type {
+    display: none;
+}
+
+main>article:nth-of-type(2)>div:hover p:last-of-type,
+main>article:nth-of-type(2)>div:active p:last-of-type {
+    display: block;
 }
 
 main>div:nth-of-type(2) {
@@ -165,12 +219,7 @@ section {
     padding-bottom: 50px;
 }
 
-section>h1 {
-    width: 100%;
-    color: var(--secondary-color);
-    margin: 0px 0px var(--small-margin) 0px;
-}
-
+section>h1,
 section>p {
     width: 100%;
     color: var(--secondary-color);
@@ -182,11 +231,11 @@ section article {
     min-width: 140px;
     max-width: 172px;
     height: 220px;
-    padding: 10px;
+    padding: 2px;
+    margin: 5px 5px var(--small-margin) 5px;
     background-color: var(--secondary-color);
-    position: relative;
     display: inline-block;
-    margin-bottom: 20px;
+    cursor: var(--abnormal-cursor);
 }
 
 section article div {
@@ -194,4 +243,11 @@ section article div {
     height: 100%;
     max-height: 150px;
     background-color: var(--primary-color);
+    cursor: var(--normal-cursor);
+}
+
+section article h2 {
+    width: 100%;
+    margin: 5px 0px 0px 0px;
+    font-size: 20px;
 }
