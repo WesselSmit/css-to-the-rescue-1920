@@ -21,6 +21,10 @@
     background-color: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 [clue="true"] {
     cursor: help;
 }
@@ -105,6 +109,47 @@ article:first-of-type p:last-of-type span:not([person])::selection {
     background-color: var(--secondary-color);
 }
 
+main>article:first-of-type,
+main>article:nth-of-type(2) {
+    margin-bottom: 0px;
+}
+
+main>div:first-of-type {
+    background-color: var(--primary-color);
+    width: 100vw;
+    max-width: 600px;
+    height: 60px;
+    margin: var(--small-margin) auto;
+    overflow-y: scroll;
+}
+
+main>div:first-of-type p {
+    padding-top: 100px;
+    margin: 0px 0px 30px 0px;
+    width: 100%;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+main>div:first-of-type p:active {
+    text-align: center;
+}
+
+main>div:nth-of-type(2) {
+    background-color: var(--primary-color);
+    width: 100vw;
+    max-width: 600px;
+    height: 80px;
+    margin: var(--small-margin) auto;
+    overflow-x: scroll;
+}
+
+main>div:nth-of-type(2) p {
+    padding: 25px 200px 0px 0px;
+    width: 200%;
+    text-align: right;
+    color: var(--secondary-color);
+}
 
 
 
