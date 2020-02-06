@@ -1,0 +1,10 @@
+{
+    "short_name": "A Murder Story",
+    "name": "A Murder Story",
+    "icons": [{}],
+    "start_url": "index.html",
+    "background_color": "#000000",
+    "display": "fullscreen",
+    "scope": "/",
+    "theme_color": "#FFFFFF"
+}
