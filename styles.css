@@ -4,8 +4,8 @@
     --small-space: 10px;
     font-family: Helvetica, Arial, sans-serif;
     cursor: var(--cursor-anim1);
-    --primary-color: #ffffff;
-    --secondary-color: #000000;
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: rgb(0, 0, 0);
     --abnormal-cursor: url(./media/cursor_light.png), auto;
     --cursor-anim1: url(./media/cursor_dark_anim1_1.png), auto;
     --cursor-anim2: url(./media/cursor_dark_anim2_1.png), auto;
@@ -14,17 +14,30 @@
     --cursor-anim5: url(./media/cursor_dark_anim5_1.png), auto;
 }
 
+main>div:last-of-type {
+    background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0.01) 25%,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(0, 0, 0, 0.01) 75%);
+}
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: #000000;
-        --secondary-color: #ffffff;
+        --primary-color: rgb(0, 0, 0);
+        --secondary-color: rgb(255, 255, 255);
         --abnormal-cursor: url(./media/cursor_dark.png), auto;
         --cursor-anim1: url(./media/cursor_light_anim1_1.png), auto;
         --cursor-anim2: url(./media/cursor_light_anim2_1.png), auto;
         --cursor-anim3: url(./media/cursor_light_anim3_1.png), auto;
         --cursor-anim4: url(./media/cursor_light_anim4_1.png), auto;
         --cursor-anim5: url(./media/cursor_light_anim5_1.png), auto;
+    }
+
+    main>div:last-of-type {
+        background-image: linear-gradient(to right,
+                rgba(255, 255, 255, 0.01) 25%,
+                rgba(255, 255, 255, 1) 50%,
+                rgba(255, 255, 255, 0.01) 75%);
     }
 }
 
@@ -110,6 +123,49 @@
 body {
     margin: 0px;
     background-color: var(--primary-color);
+    animation: bgFlickering 10000ms linear 5000ms infinite;
+}
+
+@keyframes bgFlickering {
+    0% {
+        background-color: var(--primary-color);
+    }
+
+    2.5% {
+        background-color: var(--secondary-color);
+    }
+
+    5% {
+        background-color: var(--primary-color);
+    }
+
+    7.5% {
+        background-color: var(--secondary-color);
+    }
+
+    10% {
+        background-color: var(--primary-color);
+    }
+
+    12.5% {
+        background-color: var(--secondary-color);
+    }
+
+    15% {
+        background-color: var(--primary-color);
+    }
+
+    17.5% {
+        background-color: var(--secondary-color);
+    }
+
+    20% {
+        background-color: var(--primary-color);
+    }
+
+    100% {
+        background-color: var(--primary-color);
+    }
 }
 
 main>div:first-of-type {
@@ -117,7 +173,7 @@ main>div:first-of-type {
     max-width: 600px;
     white-space: nowrap;
     margin: 0px auto;
-    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 main>div:first-of-type::before {
@@ -224,7 +280,6 @@ main>div:first-of-type p:nth-of-type(4) span {
 article {
     width: 100vw;
     height: fit-content;
-    background-color: var(--primary-color);
     position: relative;
     margin-bottom: var(--big-margin);
 }
@@ -322,7 +377,7 @@ section {
     margin: var(--small-space) auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: flex-start;
     padding-bottom: 50px;
 }
@@ -358,4 +413,27 @@ section article h2 {
     width: 100%;
     margin: 5px 0px 0px 0px;
     font-size: 20px;
+    color: var(--primary-color);
+}
+
+
+
+
+main>div:last-of-type {
+    position: fixed;
+    top: -50vh;
+    height: 200vh;
+    width: 10%;
+    mix-blend-mode: exclusion;
+    animation: bgGradientHorizontal 5000ms linear 0s infinite alternate;
+}
+
+@keyframes bgGradientHorizontal {
+    from {
+        margin-left: -5%;
+    }
+
+    to {
+        margin-left: 100%;
+    }
 }
