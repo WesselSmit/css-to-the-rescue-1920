@@ -258,7 +258,7 @@ main>div:first-of-type p:nth-of-type(4) {
     }
 
     100% {
-        left: -554px;
+        left: -555px;
         color: var(--secondary-color);
     }
 }
