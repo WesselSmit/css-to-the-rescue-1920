@@ -163,6 +163,38 @@ body {
         background-color: var(--primary-color);
     }
 
+    21% {
+        background-color: var(--secondary-color);
+    }
+
+    22% {
+        background-color: var(--primary-color);
+    }
+
+    23% {
+        background-color: var(--secondary-color);
+    }
+
+    24% {
+        background-color: var(--primary-color);
+    }
+
+    25% {
+        background-color: var(--secondary-color);
+    }
+
+    26% {
+        background-color: var(--primary-color);
+    }
+
+    27% {
+        background-color: var(--secondary-color);
+    }
+
+    28% {
+        background-color: var(--primary-color);
+    }
+
     100% {
         background-color: var(--primary-color);
     }
@@ -173,7 +205,7 @@ main>div:first-of-type {
     max-width: 600px;
     white-space: nowrap;
     margin: 0px auto;
-    overflow-x: hidden;
+    overflow-x: scroll;
 }
 
 main>div:first-of-type::before {
@@ -196,84 +228,85 @@ main>div:first-of-type p {
     color: var(--primary-color);
 }
 
+@keyframes moveLeftRight {
+    0% {
+        left: 0px;
+    }
+
+    50% {
+        left: -350px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
 main>div:first-of-type p:nth-of-type(1) {
-    animation: fadeAwayText 4800ms linear 1 10200ms forwards;
+    animation: moveLeftRight 10000ms linear 4 0ms, moveToLeft 12000ms linear infinite 40000ms forwards;
+    --moveXPixelsToLeft: 0px;
 }
 
 main>div:first-of-type p:nth-of-type(2) {
-    animation: moveLeft1 6000ms linear 1 9000ms forwards;
-}
-
-@keyframes moveLeft1 {
-    0% {
-        left: 0px;
-        color: var(--primary-color);
-    }
-
-    20% {
-        left: -166px;
-        color: var(--primary-color);
-    }
-
-    100% {
-        left: -166px;
-        color: var(--secondary-color);
-    }
+    animation: moveLeftRight 10000ms linear 4 0ms, moveToLeft 12000ms linear infinite 40000ms forwards;
+    --moveXPixelsToLeft: -166px;
 }
 
 main>div:first-of-type p:nth-of-type(3) {
-    animation: moveLeft2 6000ms linear 1 9000ms forwards;
-}
-
-@keyframes moveLeft2 {
-    0% {
-        left: 0px;
-        color: var(--primary-color);
-    }
-
-    20% {
-        left: -426px;
-        color: var(--primary-color);
-    }
-
-    100% {
-        left: -426px;
-        color: var(--secondary-color);
-    }
+    animation: moveLeftRight 10000ms linear 4 0ms, moveToLeft 12000ms linear infinite 40000ms forwards;
+    --moveXPixelsToLeft: -426px;
 }
 
 main>div:first-of-type p:nth-of-type(4) {
-    animation: moveLeft3 6000ms linear 1 9000ms forwards;
+    animation: moveLeftRight 10000ms linear 4 0ms, moveToLeft 12000ms linear infinite 40000ms forwards;
+    --moveXPixelsToLeft: -555px;
 }
 
-@keyframes moveLeft3 {
+@keyframes moveToLeft {
     0% {
         left: 0px;
-        color: var(--primary-color);
     }
 
-    20% {
-        left: -554px;
-        color: var(--primary-color);
+    10% {
+        left: var(--moveXPixelsToLeft);
+    }
+
+    50% {
+        left: var(--moveXPixelsToLeft);
+    }
+
+    55% {
+        left: 0px;
     }
 
     100% {
-        left: -555px;
-        color: var(--secondary-color);
+        left: 0px;
     }
 }
 
 main>div:first-of-type p:nth-of-type(4) span {
-    animation: fadeAwayText 1000ms linear 1 9000ms forwards;
+    animation: fadeAway 12000ms linear infinite 40000ms forwards;
 }
 
-@keyframes fadeAwayText {
-    from {
+@keyframes fadeAway {
+    0% {
         color: var(--primary-color);
     }
 
-    to {
+    10% {
         color: var(--secondary-color);
+    }
+
+    50% {
+        color: var(--secondary-color);
+    }
+
+    55% {
+        color: var(--primary-color);
+    }
+
+    100% {
+        color: var(--primary-color);
     }
 }
 
