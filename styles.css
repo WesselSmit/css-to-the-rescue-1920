@@ -15,10 +15,7 @@
 }
 
 main>div:last-of-type {
-    background-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0.01) 25%,
-            rgba(0, 0, 0, 1) 50%,
-            rgba(0, 0, 0, 0.01) 75%);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.01) 25%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.01) 75%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,10 +31,7 @@ main>div:last-of-type {
     }
 
     main>div:last-of-type {
-        background-image: linear-gradient(to right,
-                rgba(255, 255, 255, 0.01) 25%,
-                rgba(255, 255, 255, 1) 50%,
-                rgba(255, 255, 255, 0.01) 75%);
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01) 25%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.01) 75%);
     }
 }
 
