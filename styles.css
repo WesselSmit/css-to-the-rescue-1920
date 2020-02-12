@@ -401,6 +401,10 @@ main>div:nth-of-type(2) p:active {
     text-align: center;
 }
 
+main>article:nth-of-type(2) h1 {
+    perspective: 600px;
+}
+
 main>article:nth-of-type(2) h1 div {
     animation: bookEffect 1ms linear infinite forwards;
     background-color: var(--secondary-color);
@@ -411,11 +415,11 @@ main>article:nth-of-type(2) h1 div {
 
 @keyframes bookEffect {
     from {
-        transform: perspective(50em) rotateY(0deg);
+        transform: rotateY(0deg);
     }
 
     to {
-        transform: perspective(50em) rotateY(360deg);
+        transform: rotateY(360deg);
     }
 }
 
