@@ -200,6 +200,7 @@ main>div:first-of-type {
     white-space: nowrap;
     margin: 0px auto;
     overflow-x: scroll;
+    animation: bgFlickering 10000ms linear 5000ms infinite;
 }
 
 main>div:first-of-type::before {
@@ -342,7 +343,25 @@ article p {
     max-width: 600px;
 }
 
-article:first-of-type p:last-of-type {
+main>article:first-of-type h1:first-of-type {
+    animation: weirdTitleText 10000ms ease-in-out 0s infinite alternate-reverse;
+}
+
+@keyframes weirdTitleText {
+    from {
+        transform: rotateX(0deg);
+        transform: rotateY(0deg);
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateX(0deg);
+        transform: rotateY(0deg);
+        transform: rotateZ(1800deg);
+    }
+}
+
+main>article:first-of-type p:last-of-type {
     margin: var(--normal-space) auto;
 }
 
@@ -352,7 +371,7 @@ article:first-of-type p:last-of-type span:not([person]) {
     text-decoration-color: var(--secondary-color);
 }
 
-article:first-of-type p:last-of-type span:not([person])::selection {
+main>article:first-of-type p:last-of-type span:not([person])::selection {
     background-color: var(--secondary-color);
 }
 
@@ -382,6 +401,20 @@ main>div:nth-of-type(2) p:active {
     text-align: center;
 }
 
+main>article:nth-of-type(2) h1 div {
+    animation: bookEffect 500ms ease-in-out infinite alternate-reverse;
+}
+
+@keyframes bookEffect {
+    from {
+        transform: perspective(50em) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(50em) rotateY(180deg);
+    }
+}
+
 main>article:nth-of-type(2)>div p {
     margin: 0px auto;
     display: block;
@@ -405,6 +438,7 @@ main>div:nth-of-type(3) {
     height: 80px;
     margin: var(--small-space) auto;
     overflow-x: scroll;
+    animation: bgFlickering 10000ms linear 5000ms infinite;
 }
 
 main>div:nth-of-type(3) p {
