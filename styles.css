@@ -132,6 +132,7 @@ main>div:last-of-type {
 
 body {
     margin: 0px;
+    width: 100vw;
     background-color: var(--primary-color);
     animation: bgFlickering 10000ms linear 5000ms infinite, crash 60000ms linear infinite;
     overflow-x: hidden;
@@ -214,14 +215,14 @@ body {
 @keyframes crash {
     5% {
         background-image: none;
-        width: unset;
+        width: 100vw;
         height: unset;
         margin: 0px;
     }
 
     90% {
         background-image: none;
-        width: unset;
+        width: 100vw;
         height: unset;
         margin: 0px;
     }
