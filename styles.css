@@ -12,13 +12,6 @@
     --cursor-anim3: url(./media/cursor_dark_anim3_1.png), auto;
     --cursor-anim4: url(./media/cursor_dark_anim4_1.png), auto;
     --cursor-anim5: url(./media/cursor_dark_anim5_1.png), auto;
-
-    /* --abnormal-cursor: url(./media/cursor_dark_anim1.png), auto;
-    --cursor-anim1: url(./media/cursor_light_anim1_1.png), auto;
-    --cursor-anim2: url(./media/cursor_light_anim2_1.png), auto;
-    --cursor-anim3: url(./media/cursor_light_anim3_1.png), auto;
-    --cursor-anim4: url(./media/cursor_light_anim4_1.png), auto;
-    --cursor-anim5: url(./media/cursor_light_anim5_1.png), auto; */
 }
 
 main>div:last-of-type {
@@ -35,13 +28,6 @@ main>div:last-of-type {
         --cursor-anim3: url(./media/cursor_light_anim3_1.png), auto;
         --cursor-anim4: url(./media/cursor_light_anim4_1.png), auto;
         --cursor-anim5: url(./media/cursor_light_anim5_1.png), auto;
-
-        /* --abnormal-cursor: url(./media/cursor_light_anim1.png), auto;
-        --cursor-anim1: url(./media/cursor_dark_anim1_1.png), auto;
-        --cursor-anim2: url(./media/cursor_dark_anim2_1.png), auto;
-        --cursor-anim3: url(./media/cursor_dark_anim3_1.png), auto;
-        --cursor-anim4: url(./media/cursor_dark_anim4_1.png), auto;
-        --cursor-anim5: url(./media/cursor_dark_anim5_1.png), auto; */
     }
 
     main>div:last-of-type {
@@ -60,13 +46,6 @@ main>div:last-of-type {
     --cursor-anim3: url(./media/cursor_dark_anim3_1.png), auto;
     --cursor-anim4: url(./media/cursor_dark_anim4_1.png), auto;
     --cursor-anim5: url(./media/cursor_dark_anim5_1.png), auto;
-
-    /* --abnormal-cursor: url(./media/cursor_dark_anim1.png), auto;
-    --cursor-anim1: url(./media/cursor_light_anim1_1.png), auto;
-    --cursor-anim2: url(./media/cursor_light_anim2_1.png), auto;
-    --cursor-anim3: url(./media/cursor_light_anim3_1.png), auto;
-    --cursor-anim4: url(./media/cursor_light_anim4_1.png), auto;
-    --cursor-anim5: url(./media/cursor_light_anim5_1.png), auto; */
 }
 
 #head:target+body>main>div:last-of-type {
@@ -83,7 +62,6 @@ main>div:last-of-type {
 
 [clue="true"] {
     animation: exploreIndicator 500ms infinite;
-
 }
 
 @keyframes exploreIndicator {
@@ -263,7 +241,6 @@ body {
 
     93% {
         background-position: bottom right;
-
     }
 
     94% {
@@ -454,14 +431,10 @@ main>article:first-of-type h1:first-of-type {
 
 @keyframes weirdTitleText {
     from {
-        transform: rotateX(0deg);
-        transform: rotateY(0deg);
         transform: rotateZ(0deg);
     }
 
     to {
-        transform: rotateX(0deg);
-        transform: rotateY(0deg);
         transform: rotateZ(1800deg);
     }
 }
@@ -689,19 +662,6 @@ section article h2 {
 
 
 
-/* Cursor spotlight */
-/* main>div:nth-last-child(2) {
-    background-color: var(--secondary-color);
-    width: 250px;
-    height: 250px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 999px;
-    mix-blend-mode: exclusion;
-    position: absolute;
-    top: -300px;
-    left: -300px;
-    pointer-events: none;
-} */
 
 main>div:last-of-type {
     position: fixed;
@@ -723,7 +683,58 @@ main>div:last-of-type {
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    [clue="true"] {
+        animation: none;
+    }
 
+    body,
+    main>article:first-of-type h1:first-of-type,
+    main>article:nth-of-type(2) h1 div,
+    main>div:nth-of-type(3),
+    main>div:nth-last-child(3) {
+        animation: none;
+    }
 
+    main>div:first-of-type::before {
+        padding: 0px;
+    }
 
-/* p:nth-of-type() */
+    main>article:nth-of-type(2) h1 div {
+        width: 100%;
+    }
+
+    main>div:nth-last-child(3) {
+        background-image: repeating-linear-gradient(to right, rgba(0, 0, 0, 1) 0.01%, rgba(0, 0, 0, 1) 0.5%, rgba(255, 255, 255, 1) 0.501%, rgba(255, 255, 255, 1) 1%);
+    }
+
+    main>div:first-of-type p:nth-of-type(1),
+    main>div:first-of-type p:nth-of-type(2),
+    main>div:first-of-type p:nth-of-type(3),
+    main>div:first-of-type p:nth-of-type(4),
+    main>div:last-of-type,
+    main>div:nth-of-type(4) {
+        display: none;
+    }
+
+}
+
+@media print {
+
+    /* todo: haal nog wat divs weg die nu teveel ruimte in nemen (clue div's), cancel alle animaties, zorg dat het mugshot gedeelte 100vw heeft */
+    main>div:first-of-type,
+    a,
+    main>div:nth-of-type(4),
+    main>div:last-of-type {
+        display: none;
+    }
+
+    main>article:nth-of-type(2) h1 div,
+    main>div:nth-last-child(3) {
+        animation: none;
+    }
+
+    main>article:nth-of-type(2) h1 div {
+        width: 100%;
+    }
+}
