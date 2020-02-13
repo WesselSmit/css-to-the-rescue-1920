@@ -6,12 +6,19 @@
     cursor: var(--cursor-anim1);
     --primary-color: rgb(255, 255, 255);
     --secondary-color: rgb(0, 0, 0);
-    --abnormal-cursor: url(./media/cursor_light.png), auto;
+    --abnormal-cursor: url(./media/cursor_light_anim1.png), auto;
     --cursor-anim1: url(./media/cursor_dark_anim1_1.png), auto;
     --cursor-anim2: url(./media/cursor_dark_anim2_1.png), auto;
     --cursor-anim3: url(./media/cursor_dark_anim3_1.png), auto;
     --cursor-anim4: url(./media/cursor_dark_anim4_1.png), auto;
     --cursor-anim5: url(./media/cursor_dark_anim5_1.png), auto;
+
+    /* --abnormal-cursor: url(./media/cursor_dark_anim1.png), auto;
+    --cursor-anim1: url(./media/cursor_light_anim1_1.png), auto;
+    --cursor-anim2: url(./media/cursor_light_anim2_1.png), auto;
+    --cursor-anim3: url(./media/cursor_light_anim3_1.png), auto;
+    --cursor-anim4: url(./media/cursor_light_anim4_1.png), auto;
+    --cursor-anim5: url(./media/cursor_light_anim5_1.png), auto; */
 }
 
 main>div:last-of-type {
@@ -22,12 +29,19 @@ main>div:last-of-type {
     :root {
         --primary-color: rgb(0, 0, 0);
         --secondary-color: rgb(255, 255, 255);
-        --abnormal-cursor: url(./media/cursor_dark.png), auto;
+        --abnormal-cursor: url(./media/cursor_dark_anim1.png), auto;
         --cursor-anim1: url(./media/cursor_light_anim1_1.png), auto;
         --cursor-anim2: url(./media/cursor_light_anim2_1.png), auto;
         --cursor-anim3: url(./media/cursor_light_anim3_1.png), auto;
         --cursor-anim4: url(./media/cursor_light_anim4_1.png), auto;
         --cursor-anim5: url(./media/cursor_light_anim5_1.png), auto;
+
+        /* --abnormal-cursor: url(./media/cursor_light_anim1.png), auto;
+        --cursor-anim1: url(./media/cursor_dark_anim1_1.png), auto;
+        --cursor-anim2: url(./media/cursor_dark_anim2_1.png), auto;
+        --cursor-anim3: url(./media/cursor_dark_anim3_1.png), auto;
+        --cursor-anim4: url(./media/cursor_dark_anim4_1.png), auto;
+        --cursor-anim5: url(./media/cursor_dark_anim5_1.png), auto; */
     }
 
     main>div:last-of-type {
@@ -37,14 +51,22 @@ main>div:last-of-type {
 
 
 #head:target+body {
+    cursor: var(--cursor-anim1);
     --primary-color: rgb(255, 255, 255);
     --secondary-color: rgb(0, 0, 0);
-    --abnormal-cursor: url(./media/cursor_light.png), auto;
+    --abnormal-cursor: url(./media/cursor_light_anim1.png), auto;
     --cursor-anim1: url(./media/cursor_dark_anim1_1.png), auto;
     --cursor-anim2: url(./media/cursor_dark_anim2_1.png), auto;
     --cursor-anim3: url(./media/cursor_dark_anim3_1.png), auto;
     --cursor-anim4: url(./media/cursor_dark_anim4_1.png), auto;
     --cursor-anim5: url(./media/cursor_dark_anim5_1.png), auto;
+
+    /* --abnormal-cursor: url(./media/cursor_dark_anim1.png), auto;
+    --cursor-anim1: url(./media/cursor_light_anim1_1.png), auto;
+    --cursor-anim2: url(./media/cursor_light_anim2_1.png), auto;
+    --cursor-anim3: url(./media/cursor_light_anim3_1.png), auto;
+    --cursor-anim4: url(./media/cursor_light_anim4_1.png), auto;
+    --cursor-anim5: url(./media/cursor_light_anim5_1.png), auto; */
 }
 
 #head:target+body>main>div:last-of-type {
@@ -134,6 +156,7 @@ body {
     margin: 0px;
     background-color: var(--primary-color);
     animation: bgFlickering 10000ms linear 5000ms infinite;
+    overflow-x: hidden;
 }
 
 @keyframes bgFlickering {
@@ -566,6 +589,19 @@ section article h2 {
 
 
 
+
+/* main>div:nth-last-child(2) {
+    background-color: var(--secondary-color);
+    width: 250px;
+    height: 250px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 999px;
+    mix-blend-mode: exclusion;
+    position: absolute;
+    top: -300px;
+    left: -300px;
+    pointer-events: none;
+} */
 
 main>div:last-of-type {
     position: fixed;
