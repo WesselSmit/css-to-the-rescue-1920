@@ -155,7 +155,7 @@ main>div:last-of-type {
 body {
     margin: 0px;
     background-color: var(--primary-color);
-    animation: bgFlickering 10000ms linear 5000ms infinite;
+    animation: bgFlickering 10000ms linear 5000ms infinite, crash 60000ms linear infinite;
     overflow-x: hidden;
 }
 
@@ -230,6 +230,58 @@ body {
 
     100% {
         background-color: var(--primary-color);
+    }
+}
+
+@keyframes crash {
+    5% {
+        background-image: none;
+        width: unset;
+        height: unset;
+        margin: 0px;
+    }
+
+    90% {
+        background-image: none;
+        width: unset;
+        height: unset;
+        margin: 0px;
+    }
+
+    91% {
+        background-image: repeating-radial-gradient(black 8px, white 12px);
+        background-position: top left;
+        background-size: 12px 12px;
+        width: 300px;
+        height: 300px;
+        margin: var(--small-space) auto;
+    }
+
+    92% {
+        background-position: top right;
+    }
+
+    93% {
+        background-position: bottom right;
+
+    }
+
+    94% {
+        background-position: bottom left;
+
+    }
+
+    95% {
+        background-position: center;
+    }
+
+    100% {
+        background-image: repeating-radial-gradient(black 8px, white 12px);
+        background-position: center;
+        background-size: 24px 24px;
+        width: 300px;
+        height: 300px;
+        margin: var(--small-space) auto;
     }
 }
 
@@ -510,6 +562,54 @@ main>div:nth-of-type(3) p {
 }
 
 main>div:nth-of-type(4) {
+    background-image: repeating-radial-gradient(black 8px, white 12px);
+    width: 300px;
+    height: 300px;
+    margin: var(--small-space) auto;
+    animation: trippyGradientDirections 10000ms linear infinite, trippyGradientSize 400ms linear infinite;
+}
+
+@keyframes trippyGradientDirections {
+    0% {
+        background-position: top left;
+    }
+
+    10% {
+        background-position: top right;
+    }
+
+    20% {
+        background-position: bottom right;
+    }
+
+    30% {
+        background-position: bottom left;
+    }
+
+    40% {
+        background-position: top left;
+    }
+
+    50% {
+        background-position: center;
+    }
+
+    100% {
+        background-position: center;
+    }
+}
+
+@keyframes trippyGradientSize {
+    from {
+        background-size: 12px 12px;
+    }
+
+    to {
+        background-size: 24px 24px;
+    }
+}
+
+main>div:nth-last-child(3) {
     height: 100px;
     width: 150vw;
     animation: gradientBG 5000ms linear 0ms infinite, horizontalMovingBG 5000ms linear 0ms infinite alternate-reverse, exploreIndicator 500ms infinite;
@@ -589,7 +689,7 @@ section article h2 {
 
 
 
-
+/* Cursor spotlight */
 /* main>div:nth-last-child(2) {
     background-color: var(--secondary-color);
     width: 250px;
@@ -622,3 +722,8 @@ main>div:last-of-type {
         margin-left: 100%;
     }
 }
+
+
+
+
+/* p:nth-of-type() */
