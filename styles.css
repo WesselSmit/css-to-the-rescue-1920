@@ -1,4 +1,5 @@
 :root {
+    --gigantic-space: 20vh;
     --big-space: 80px;
     --normal-space: 30px;
     --small-space: 10px;
@@ -263,6 +264,17 @@ body {
     }
 }
 
+main>h1 {
+    font-size: 20vw;
+    width: 80vw;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    animation: bookEffect 1ms linear infinite forwards;
+    transform-origin: 150%;
+    line-height: 0.8;
+    margin: 5vh 0px 20vh 0px;
+}
+
 main>span {
     max-width: 600px;
     width: 100vw;
@@ -426,6 +438,10 @@ article p {
     max-width: 600px;
 }
 
+main>article:first-of-type {
+    margin-bottom: var(--gigantic-space);
+}
+
 main>article:first-of-type h1:first-of-type {
     animation: weirdTitleText 10000ms ease-in-out 0s infinite alternate-reverse;
 }
@@ -454,7 +470,6 @@ main>article:first-of-type p:last-of-type span:not([person])::selection {
     background-color: var(--secondary-color);
 }
 
-main>article:first-of-type,
 main>article:nth-of-type(2) {
     margin-bottom: 0px;
 }
@@ -482,13 +497,14 @@ main>div:nth-of-type(2) p:active {
 
 main>article:nth-of-type(2) h1 {
     perspective: 600px;
+    margin: 100px 12vw;
 }
 
 main>article:nth-of-type(2) h1 div {
     animation: bookEffect 1ms linear infinite forwards;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    width: 50%;
+    width: 38vw;
     transform-origin: 100%;
 }
 
@@ -505,6 +521,11 @@ main>article:nth-of-type(2) h1 div {
 main>article:nth-of-type(2)>div p {
     margin: 0px auto;
     display: block;
+    transform: rotate(90deg);
+}
+
+main>article:nth-of-type(2)>div:last-of-type {
+    transform: rotate(270deg);
 }
 
 main>article:nth-of-type(2)>div p:last-of-type,
@@ -661,13 +682,10 @@ section article h2 {
     color: var(--primary-color);
 }
 
-
-
-
 main>div:last-of-type {
-    position: fixed;
-    top: -50vh;
-    height: 200vh;
+    position: absolute;
+    top: 120vh;
+    height: 100vh;
     width: 10%;
     z-index: 100;
     mix-blend-mode: exclusion;
