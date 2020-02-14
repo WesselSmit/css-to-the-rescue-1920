@@ -496,8 +496,18 @@ main>div:nth-of-type(2) p:active {
 }
 
 main>article:nth-of-type(2) h1 {
-    perspective: 600px;
     margin: 100px 12vw;
+    animation: changePerspective 10000ms infinite linear alternate;
+}
+
+@keyframes changePerspective {
+    from {
+        perspective: 200px;
+    }
+
+    to {
+        perspective: 600px;
+    }
 }
 
 main>article:nth-of-type(2) h1 div {
@@ -605,6 +615,7 @@ main>div:nth-of-type(4) {
 }
 
 main>div:nth-last-child(3) {
+    margin: 10vh 0vh;
     height: 100px;
     width: 150vw;
     animation: gradientBG 5000ms linear 0ms infinite, horizontalMovingBG 5000ms linear 0ms infinite alternate-reverse, exploreIndicator 500ms infinite;
@@ -685,7 +696,7 @@ section article h2 {
 main>div:last-of-type {
     position: absolute;
     top: 120vh;
-    height: 100vh;
+    height: 110vh;
     width: 10%;
     z-index: 100;
     mix-blend-mode: exclusion;
@@ -707,6 +718,13 @@ main>div:last-of-type {
         animation: none;
     }
 
+    main>h1 {
+        margin: 0px;
+        width: 100vw;
+        padding-bottom: 7vh;
+    }
+
+    main>h1,
     body,
     main>article:first-of-type h1:first-of-type,
     main>article:nth-of-type(2) h1 div,
@@ -719,12 +737,23 @@ main>div:last-of-type {
         padding: 0px;
     }
 
+    main>article:first-of-type {
+        margin: 0px;
+    }
+
+    main>article:nth-of-type(2) h1 {
+        margin: 0px auto;
+    }
+
+
     main>article:nth-of-type(2) h1 div {
         width: 100%;
     }
 
     main>div:nth-last-child(3) {
         background-image: repeating-linear-gradient(to right, rgba(0, 0, 0, 1) 0.01%, rgba(0, 0, 0, 1) 0.5%, rgba(255, 255, 255, 1) 0.501%, rgba(255, 255, 255, 1) 1%);
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     main>div:first-of-type p:nth-of-type(1),
@@ -734,26 +763,5 @@ main>div:last-of-type {
     main>div:last-of-type,
     main>div:nth-of-type(4) {
         display: none;
-    }
-
-}
-
-@media print {
-
-    /* todo: haal nog wat divs weg die nu teveel ruimte in nemen (clue div's), cancel alle animaties, zorg dat het mugshot gedeelte 100vw heeft */
-    main>div:first-of-type,
-    a,
-    main>div:nth-of-type(4),
-    main>div:last-of-type {
-        display: none;
-    }
-
-    main>article:nth-of-type(2) h1 div,
-    main>div:nth-last-child(3) {
-        animation: none;
-    }
-
-    main>article:nth-of-type(2) h1 div {
-        width: 100%;
     }
 }
