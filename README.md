@@ -31,7 +31,6 @@ A list of things I've learned during this course:
 - `@media prefers-reduced-motion`
 - `direction` 
 - `unicode-bidi` 
-- `background-image` 
 - `rotateZ(deg)`
 - `transform-origin`
 - `perspective`
