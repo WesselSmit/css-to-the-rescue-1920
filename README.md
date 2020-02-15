@@ -32,22 +32,18 @@ A list of things I've learned during this course:
 - `direction` 
 - `unicode-bidi` 
 - `background-image` 
+- `rotateZ(deg)`
+- `transform-origin`
+- `perspective`
+- `mix-blend-mode`
 - `:target` 
 - `::selection` 
 - `::-webkit-scrollbar` 
 - `[data-attribute]` 
 - `+` 
 - `nth-last-child(3)`
-- `:not()`
-- `rotateZ(deg)`
-- `transform-origin`
-- `perspective`
-- `mix-blend-mode`
-- `unset`
-- `fit-content`
 - Custom Properties
 - Gradients
 - Custom Cursor
-- 'Target Hack'
 - Flex
 
