@@ -13,7 +13,6 @@ In this course you have to choose a context & 2 restrictions. By forcing you to 
 
 # Contexts
 
-I choose 2 contexts:
 - dark mode
 - prefers-reduced-motion
 
