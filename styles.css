@@ -553,17 +553,18 @@ main>div:nth-of-type(3) {
     background-color: var(--primary-color);
     width: 100vw;
     max-width: 600px;
-    height: 80px;
-    margin: var(--small-space) auto;
+    height: 120px;
+    margin: 0px auto;
     overflow-x: scroll;
     animation: bgFlickering 10000ms linear 5000ms infinite;
 }
 
 main>div:nth-of-type(3) p {
-    padding: 25px 120px 0px 0px;
+    padding: 40px 120px 40px 0px;
     width: 200%;
     text-align: right;
     color: var(--secondary-color);
+    animation: exploreIndicator 500ms infinite;
 }
 
 main>div:nth-of-type(4) {
