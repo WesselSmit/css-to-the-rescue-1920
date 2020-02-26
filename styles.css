@@ -731,17 +731,20 @@ details div {
     pointer-events: none;
     width: 100%;
     height: 100%;
+    height: 100px;
     max-height: 150px;
     background-color: var(--primary-color);
     cursor: var(--cursor-anim1);
+    background: radial-gradient(#e66465, #9198e5);
 }
 
 details>summary p {
     width: 100%;
-    margin: 5px 0px 0px 10px;
+    margin: 5px 0px 0px 0px;
     font-size: 20px;
     color: var(--primary-color);
     pointer-events: none;
+    text-align: center;
 }
 
 details h2 {
