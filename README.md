@@ -34,6 +34,7 @@ A list of things I've learned during this course:
 - `transform-origin`
 - `perspective`
 - `mix-blend-mode`
+- `filter`
 - `:target` 
 - `::selection` 
 - `::-webkit-scrollbar` 
@@ -44,4 +45,8 @@ A list of things I've learned during this course:
 - Gradients
 - Custom Cursor
 - Flex
+- '<details>`
+- `details[closed]` / `details[open]`
+- `pointer-events`
+- `&lrm` (left-to-right mark)) 
 
