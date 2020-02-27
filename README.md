@@ -42,7 +42,8 @@ A list of things I've learned during this course:
 - `::-webkit-scrollbar` 
 - `[data-attribute]` 
 - `+` 
-- `nth-last-child(3)`
+- `:nth-last-child(3)`
+- `:nth-of-type(2n+3)`
 - Custom Properties
 - Gradients
 - Custom Cursor

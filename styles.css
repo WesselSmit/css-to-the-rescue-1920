@@ -268,6 +268,11 @@ main>div:first-of-type {
     animation: bgFlickering 10000ms linear 5000ms infinite;
 }
 
+main>div:first-of-type:hover {
+    filter: invert(100%);
+    transition: filter 0ms;
+}
+
 main>div:first-of-type::before {
     content: "";
     position: absolute;
@@ -652,23 +657,41 @@ details {
     cursor: var(--abnormal-cursor);
 }
 
-/* make mugshots dissapear on hover with filter (blur) */
+/* mugshot effects/animations */
 
-details:hover {
+details:nth-of-type(1n+3):not(:last-of-type):hover {
+    transform: rotateZ(180deg);
+    transition: all 0ms;
+}
+
+details:nth-of-type(4):hover {
+    transform: rotateX(360deg);
+    transition: all 5000ms;
+}
+
+details:nth-of-type(5n+2):hover {
     filter: blur(150px);
     transition: filter 3000ms;
+}
+
+details:first-of-type:hover,
+details:last-of-type:hover {
+    filter: invert(100%);
+    transition: filter 300ms;
+    cursor: var(--cursor_anim1);
 }
 
 /* Clicked mugshots should show user if they guessed correct */
 
 details[open] {
-    filter: blur(0px);
-    transition: filter 0ms;
+    filter: blur(0px) invert(0%);
+    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+    transition: all 0ms;
 }
 
 /* Close/minimalize icon */
 
-details[open]::after {
+details:not(:nth-of-type(3))[open]::after {
     content: "x";
     position: absolute;
     top: 3px;
@@ -849,7 +872,7 @@ main>div:last-of-type {
         display: none;
     }
 
-    details:hover {
+    details:nth-of-type(3n+2):hover {
         filter: blur(0px);
         transition: filter 0ms;
     }
