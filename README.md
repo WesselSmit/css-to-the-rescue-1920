@@ -13,8 +13,10 @@ In this course you have to choose a context & 2 restrictions. By forcing you to 
 
 # Contexts
 
-- dark mode
-- prefers-reduced-motion
+- `dark mode`
+- `prefers-reduced-motion`
+
+>You can enable `prefers-reduced-motion` in system preferences > accessibility > display > reduce motion
 
 # Restrictions
 
@@ -46,7 +48,7 @@ A list of things I've learned during this course:
 - Custom Cursor
 - Flex
 - '<details>`
-- `details[closed]` / `details[open]`
+- `details[open]`
 - `pointer-events`
 - `&lrm` (left-to-right mark)) 
 
