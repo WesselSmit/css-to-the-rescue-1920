@@ -47,7 +47,6 @@ A list of things I've learned during this course:
 - Gradients
 - Custom Cursor
 - Flex
-- '<details>`
 - `details[open]`
 - `pointer-events`
 - `&lrm` (left-to-right mark)) 
