@@ -681,14 +681,6 @@ details:last-of-type:hover {
     cursor: var(--cursor_anim1);
 }
 
-/* Clicked mugshots should show user if they guessed correct */
-
-details[open] {
-    filter: blur(0px) invert(0%);
-    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-    transition: all 0ms;
-}
-
 /* Close/minimalize icon */
 
 details:not(:nth-of-type(3))[open]::after {
