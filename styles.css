@@ -697,9 +697,49 @@ details div {
     height: 100%;
     height: 100px;
     max-height: 150px;
-    background-color: var(--primary-color);
+    background-color: white;
     cursor: var(--cursor-anim1);
-    background: radial-gradient(#e66465, #9198e5);
+    background-image: var(--mugshot);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+details:nth-of-type(1) div {
+    --mugshot: url(./media/mugshots/mugshot1.svg);
+}
+
+details:nth-of-type(2) div {
+    --mugshot: url(./media/mugshots/mugshot2.svg);
+}
+
+details:nth-of-type(3) div {
+    --mugshot: url(./media/mugshots/mugshot3.svg);
+}
+
+details:nth-of-type(4) div {
+    --mugshot: url(./media/mugshots/mugshot4.svg);
+}
+
+details:nth-of-type(5) div {
+    --mugshot: url(./media/mugshots/mugshot5.svg);
+}
+
+details:nth-of-type(6) div {
+    --mugshot: url(./media/mugshots/mugshot6.svg);
+}
+
+/* Correct mugshot -> in jail */
+
+details:nth-of-type(3)[open] div {
+    background-image: var(--mugshot), repeating-linear-gradient(to right, rgba(0, 0, 0, 1) 0.01%, rgba(0, 0, 0, 1) 6%, rgba(255, 255, 255, 0) 6.001%, rgba(255, 255, 255, 0) 12%);
+}
+
+/* Wrong mugshot */
+
+details:not(:nth-of-type(3))[open] div {
+    background-image: var(--mugshot), url(./media/mugshots/wrong.svg);
+
 }
 
 /* mugshot content */
