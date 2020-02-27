@@ -1,3 +1,8 @@
+/* For this project I've chosen for a selector first methodology */
+/* The CSS order is the same as the HTML (top - bottom) */
+
+/* Delcare CSS Custom Properties */
+
 :root {
     --gigantic-space: 20vh;
     --big-space: 80px;
@@ -19,6 +24,8 @@ main>div:last-of-type {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.01) 25%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.01) 75%);
 }
 
+/* Dark Mode System Preferences */
+
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: rgb(0, 0, 0);
@@ -36,6 +43,7 @@ main>div:last-of-type {
     }
 }
 
+/* Light Mode Manual Toggle */
 
 #head:target+body {
     cursor: var(--cursor-anim1);
@@ -53,6 +61,8 @@ main>div:last-of-type {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.01) 25%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.01) 75%);
 }
 
+/* Declare Properties that should be as global as possible and won't be overwritten */
+
 ::selection {
     background-color: none;
 }
@@ -61,10 +71,13 @@ main>div:last-of-type {
     display: none;
 }
 
+/* All "hidden" clues should have a cursor animation as a hint to the users */
+
 [clue="true"] {
     animation: exploreIndicator 500ms infinite;
 }
 
+/* Loop through different cursor sizes */
 @keyframes exploreIndicator {
     0% {
         cursor: var(--cursor-anim1)
@@ -86,6 +99,8 @@ main>div:last-of-type {
         cursor: var(--cursor-anim5)
     }
 }
+
+/* Different ways of encrypting text -> make text more difficult to read */
 
 [encryption]::after {
     display: none;
@@ -109,6 +124,8 @@ main>div:last-of-type {
     text-align: right;
 }
 
+/* decrypt text to human readable text */
+
 [encryption="flipped"]:hover,
 [encryption]:focus,
 [encryption]:active {
@@ -117,6 +134,8 @@ main>div:last-of-type {
     unicode-bidi: normal;
     text-align: left;
 }
+
+/* Story-person Indicator */
 
 [person]::before {
     background-color: var(--secondary-color);
@@ -138,6 +157,8 @@ body {
     animation: bgFlickering 10000ms linear 5000ms infinite, crash 30000ms linear infinite;
     overflow-x: hidden;
 }
+
+/* Animation to make a flickering background */
 
 @keyframes bgFlickering {
     0% {
@@ -213,6 +234,8 @@ body {
     }
 }
 
+/* Animation to stimulate a computer crash for a few seconds */
+
 @keyframes crash {
     5% {
         background-image: none;
@@ -264,6 +287,8 @@ body {
     }
 }
 
+/* Header (aka big text at start of page thats goes crazy) */
+
 main>h1 {
     font-size: 20vw;
     width: 80vw;
@@ -274,6 +299,8 @@ main>h1 {
     line-height: 0.8;
     margin: 5vh 0px 20vh 0px;
 }
+
+/* Manual dark/light mode switch links */
 
 main>span {
     max-width: 600px;
@@ -288,6 +315,8 @@ a:active {
     color: var(--secondary-color);
     cursor: var(--cursor-anim1);
 }
+
+/* Fake news carousel which tells you the answer if you're patient */
 
 main>div:first-of-type {
     background-color: var(--secondary-color);
@@ -318,25 +347,31 @@ main>div:first-of-type p {
     color: var(--primary-color);
 }
 
+/* To avoid using 4 keyframes (one for each <p>) to create different animations, 
+I've chosen to use custom properties in 1 keyframe animation, 
+this way there are different animations while not taking up 200 lines of CSS code */
+
 main>div:first-of-type p:nth-of-type(1) {
-    animation: newsCarousel 52000ms linear infinite 3000ms forwards;
+    animation: newsCarousel 32000ms linear infinite 3000ms forwards;
     --moveXPixelsToLeft: 0px;
 }
 
 main>div:first-of-type p:nth-of-type(2) {
-    animation: newsCarousel 52000ms linear infinite 3000ms forwards;
+    animation: newsCarousel 32000ms linear infinite 3000ms forwards;
     --moveXPixelsToLeft: -166px;
 }
 
 main>div:first-of-type p:nth-of-type(3) {
-    animation: newsCarousel 52000ms linear infinite 3000ms forwards;
+    animation: newsCarousel 32000ms linear infinite 3000ms forwards;
     --moveXPixelsToLeft: -426px;
 }
 
 main>div:first-of-type p:nth-of-type(4) {
-    animation: newsCarousel 52000ms linear infinite 3000ms forwards;
+    animation: newsCarousel 32000ms linear infinite 3000ms forwards;
     --moveXPixelsToLeft: -555px;
 }
+
+/* Makes text move like it would in a news carousel on TV */
 
 @keyframes newsCarousel {
     0% {
@@ -392,9 +427,13 @@ main>div:first-of-type p:nth-of-type(4) {
     }
 }
 
+/* Hide all unnecessary text to show clue/answer */
+
 main>div:first-of-type p:nth-of-type(4) span {
-    animation: fadeAway 52000ms linear infinite 3000ms forwards;
+    animation: fadeAway 32000ms linear infinite 3000ms forwards;
 }
+
+/* Fade out all unnecessary text (and reset) */
 
 @keyframes fadeAway {
     0% {
@@ -422,6 +461,8 @@ main>div:first-of-type p:nth-of-type(4) span {
     }
 }
 
+/* First part of story */
+
 article {
     width: 100vw;
     height: fit-content;
@@ -446,6 +487,8 @@ main>article:first-of-type h1:first-of-type {
     animation: weirdTitleText 10000ms ease-in-out 0s infinite alternate-reverse;
 }
 
+/* Animation which rotates the title a bunch of times */
+
 @keyframes weirdTitleText {
     from {
         transform: rotateZ(0deg);
@@ -466,6 +509,8 @@ article:first-of-type p:last-of-type span:not([person]) {
     text-decoration-color: var(--secondary-color);
 }
 
+/* Make clue visible if text is selected */
+
 main>article:first-of-type p:last-of-type span:not([person])::selection {
     background-color: var(--secondary-color);
 }
@@ -473,6 +518,8 @@ main>article:first-of-type p:last-of-type span:not([person])::selection {
 main>article:nth-of-type(2) {
     margin-bottom: 0px;
 }
+
+/* First scroll clue */
 
 main>div:nth-of-type(2) {
     background-color: var(--primary-color);
@@ -494,6 +541,9 @@ main>div:nth-of-type(2) p {
 main>div:nth-of-type(2) p:active {
     text-align: center;
 }
+
+/* Story part 2 */
+/* spacey-text which rotates the Z axis with constantly changing perspective */
 
 main>article:nth-of-type(2) h1 {
     margin: 100px 12vw;
@@ -518,6 +568,13 @@ main>article:nth-of-type(2) h1 div {
     transform-origin: 100%;
 }
 
+/* This animation makes the spacy texts -> it's 1 element which tries to rotate a full 360 degrees every millisecond. 
+This results in a effect where the user sees the text appear 3 times (all in different angles).
+This is because of the so called shutter-effect -> our eyes (and technology) can only handle x amount of frames per second.
+Meaning that if something moves to fast -> we are missing gaps.
+Things that move at certain speeds (in a circle) appear to be standing still or moving at different speeds because
+we can only see that small chunk of the animation/movement*/
+
 @keyframes bookEffect {
     from {
         transform: rotateY(0deg);
@@ -538,6 +595,8 @@ main>article:nth-of-type(2)>div:last-of-type {
     transform: rotate(270deg);
 }
 
+/* Change text content when the user hovers over the element by switching display values */
+
 main>article:nth-of-type(2)>div p:last-of-type,
 main>article:nth-of-type(2)>div:hover p:first-of-type,
 main>article:nth-of-type(2)>div:active p:first-of-type {
@@ -548,6 +607,8 @@ main>article:nth-of-type(2)>div:hover p:last-of-type,
 main>article:nth-of-type(2)>div:active p:last-of-type {
     display: block;
 }
+
+/* Scrollable clue #2 */
 
 main>div:nth-of-type(3) {
     background-color: var(--primary-color);
@@ -567,6 +628,8 @@ main>div:nth-of-type(3) p {
     animation: exploreIndicator 500ms infinite;
 }
 
+/* spacey gradient (used just as decoration) */
+
 main>div:nth-of-type(4) {
     background-image: repeating-radial-gradient(black 8px, white 12px);
     width: 300px;
@@ -575,6 +638,7 @@ main>div:nth-of-type(4) {
     animation: trippyGradientDirections 10000ms linear infinite, trippyGradientSize 400ms linear infinite;
 }
 
+/* Make the gradient move in different directions from multiple angles */
 @keyframes trippyGradientDirections {
     0% {
         background-position: top left;
@@ -605,6 +669,8 @@ main>div:nth-of-type(4) {
     }
 }
 
+/* Make the trippy/loop effect */
+
 @keyframes trippyGradientSize {
     from {
         background-size: 12px 12px;
@@ -615,12 +681,16 @@ main>div:nth-of-type(4) {
     }
 }
 
+/* Horizontal gradient line */
+
 main>div:nth-last-child(3) {
     margin: 10vh 0vh;
     height: 100px;
     width: 150vw;
     animation: gradientBG 5000ms linear 0ms infinite, horizontalMovingBG 5000ms linear 0ms infinite alternate-reverse, exploreIndicator 500ms infinite;
 }
+
+/* Animate the gradient patterns */
 
 @keyframes gradientBG {
     0% {
@@ -636,6 +706,8 @@ main>div:nth-last-child(3) {
     }
 }
 
+/* Make the gradient line move horizontally */
+
 @keyframes horizontalMovingBG {
     40% {
         margin-left: 0px;
@@ -650,6 +722,8 @@ main>div:nth-last-child(3) {
     }
 }
 
+/* Mugshot section */
+
 section {
     max-width: 600px;
     margin: var(--small-space) auto;
@@ -660,6 +734,8 @@ section {
     padding-bottom: 50px;
 }
 
+/* Encrypted titles */
+
 section>h1,
 section>p {
     width: 100%;
@@ -667,25 +743,7 @@ section>p {
     margin: 0px 0px var(--small-space) 0px;
 }
 
-main>div:last-of-type {
-    position: absolute;
-    top: 120vh;
-    height: 110vh;
-    width: 10%;
-    z-index: 100;
-    mix-blend-mode: exclusion;
-    animation: bgGradientHorizontal 5000ms linear 0s infinite alternate;
-}
-
-@keyframes bgGradientHorizontal {
-    from {
-        margin-left: -10%;
-    }
-
-    to {
-        margin-left: 100%;
-    }
-}
+/* Individual mugshots */
 
 details {
     width: calc(50% - 40px);
@@ -698,15 +756,21 @@ details {
     cursor: var(--abnormal-cursor);
 }
 
+/* make mugshots dissapear on hover with filter (blur) */
+
 details:hover {
     filter: blur(150px);
     transition: filter 3000ms;
 }
 
+/* Clicked mugshots should show user if they guessed correct */
+
 details[open] {
     filter: blur(0px);
     transition: filter 0ms;
 }
+
+/* Close/minimalize icon */
 
 details[open]::after {
     content: "x";
@@ -718,6 +782,8 @@ details[open]::after {
     font-size: 20px;
 }
 
+/* Hide standard styling */
+
 summary::-webkit-details-marker {
     display: none;
 }
@@ -726,6 +792,8 @@ details:focus,
 summary:focus {
     outline: none;
 }
+
+/* mughot avatars */
 
 details div {
     pointer-events: none;
@@ -737,6 +805,8 @@ details div {
     cursor: var(--cursor-anim1);
     background: radial-gradient(#e66465, #9198e5);
 }
+
+/* mugshot content */
 
 details>summary p {
     width: 100%;
@@ -764,6 +834,32 @@ details>p {
     font-size: 15px;
     text-align: center;
 }
+
+/* Vertical laser */
+
+main>div:last-of-type {
+    position: absolute;
+    top: 120vh;
+    height: 110vh;
+    width: 10%;
+    z-index: 100;
+    mix-blend-mode: exclusion;
+    animation: bgGradientHorizontal 5000ms linear 0s infinite alternate;
+}
+
+/* Move the vertical laser horizontally */
+
+@keyframes bgGradientHorizontal {
+    from {
+        margin-left: -10%;
+    }
+
+    to {
+        margin-left: 100%;
+    }
+}
+
+/* Prefers reduced motion media rule -> prevent people from having seizures but make sure the app is still usable */
 
 @media (prefers-reduced-motion: reduce) {
     [clue="true"] {
